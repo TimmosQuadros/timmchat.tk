@@ -5,16 +5,9 @@
 	<title>Chat - Customer Module</title>
 	<link type="text/css" rel="stylesheet" href="style.css" />
 </head>
-<?php include 'loginform.php'; ?>
-<?php include 'post.php'; ?>
 <?php
-if(isset($_SESSION['name'])){
-    $text = $_POST['text'];
-     
-    $fp = fopen("log.html", 'a');
-    fwrite($fp, "<div class='msgln'>(".date("g:i A").") <b>".$_SESSION['name']."</b>: ".stripslashes(htmlspecialchars($text))."<br></div>");
-    fclose($fp);
-}
+include 'loginform.php';
+
 if (isset($_GET['logout'])) {
 
 	//Simple exit message
@@ -72,7 +65,6 @@ if (!isset($_SESSION['name'])) {
 				$("#usermsg").attr("value", "");
 				return false;
 			});
-
 			function loadLog() {
 				var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
 				$.ajax({
@@ -80,7 +72,6 @@ if (!isset($_SESSION['name'])) {
 					cache: false,
 					success: function(html) {
 						$("#chatbox").html(html); //Insert chat log into the #chatbox div	
-
 						//Auto-scroll			
 						var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
 						if (newscrollHeight > oldscrollHeight) {
@@ -91,7 +82,6 @@ if (!isset($_SESSION['name'])) {
 					},
 				});
 			}
-
 			setInterval(loadLog, 2500);
 		});
 	</script>
