@@ -78,7 +78,18 @@ if (!isset($_SESSION['name'])) {
 			function loadLog() {
 				if($modifiedTS != $lastModifiedTS){
 					$lastModifiedTS = $modifiedTS;
-					var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
+					//Make sure that it has time to get the newest messages
+					reload();
+					sleep(1);
+					reload();
+					sleep(1);
+					reload();
+				}else{
+					return;
+				}
+			}
+			function reload(){
+				var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
 					$.ajax({
 						url: "log.html",
 						cache: false,
@@ -93,9 +104,6 @@ if (!isset($_SESSION['name'])) {
 							}
 						},
 					});
-				}else{
-					return;
-				}
 			}
 			setInterval(loadLog, 2500);
 		});
