@@ -45,13 +45,16 @@ if ($uploadOk == 0) {
     //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     if(isset($_SESSION['name'])){
         $text = $_POST['text'];
-         
         $fp = fopen("log.html", 'a');
         fwrite($fp, "<div class='msgln'>(".date("g:i A").") <b>".$_SESSION['name']."</b>: "+"<br><img src=\""+"\" alt=\"image\" width=\"200\"><\img>"+"<br></div>");
         fclose($fp);
+    }else{
+        echo("No session");
     }
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
+  header("Location: http://www.timmchat.tk/index.php"); 
+  exit; 
 }
 ?>
