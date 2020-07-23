@@ -56,8 +56,10 @@ if (!isset($_SESSION['name'])) {
 	<script type="text/javascript">
 		// jQuery Document
 		$(document).ready(function() {
-			$modifiedTS = 0;
-			$lastModifiedTS = 0;
+			<?php
+				static $modifiedTS = 0;
+				static $lastModifiedTS = 0;
+			?>
 			//If user wants to end session
 			$("#exit").click(function() {
 				var exit = confirm("Are you sure you want to end the session?");
