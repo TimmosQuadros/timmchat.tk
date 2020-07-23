@@ -80,7 +80,7 @@ if (!isset($_SESSION['name'])) {
 				return false;
 			});
 			function loadLog() {
-				if($modifiedTS != $lastModifiedTS){
+				if($modifiedTS != $lastModifiedTS || $lastModifiedTS != filemtime("log.html")){
 					$lastModifiedTS = $modifiedTS;
 					reload();
 				}else{
