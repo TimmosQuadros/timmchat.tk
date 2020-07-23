@@ -69,17 +69,19 @@ if (!isset($_SESSION['name'])) {
 				return false;
 			});
 			function loadLog() {
+				var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
 					$.ajax({
 						url: "log.html",
 						cache: false,
 						success: function(html) {
 							$("#chatbox").html(html); //Insert chat log into the #chatbox div	
-							//Auto-scroll
-							//if (newscrollHeight > oldscrollHeight) {
+							//Auto-scroll			
+							var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
+							if (newscrollHeight > oldscrollHeight) {
 								$("#chatbox").animate({
-									scrollTop: $("#chatbox").attr("scrollHeight")
+									scrollTop: newscrollHeight
 								}, 'normal'); //Autoscroll to bottom of div
-							//}
+							}
 						},
 					});
 			}
