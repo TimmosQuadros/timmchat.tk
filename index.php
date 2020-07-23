@@ -72,17 +72,16 @@ if (!isset($_SESSION['name'])) {
 					text: clientmsg
 				});
 				$("#usermsg").attr("value", "");
+				//Wait for it to finish
+				while($modifiedTS == $lastModifiedTS){
+					sleep(1);
+				}
 				$modifiedTS = filemtime("log.html");
 				return false;
 			});
 			function loadLog() {
 				if($modifiedTS != $lastModifiedTS){
 					$lastModifiedTS = $modifiedTS;
-					//Make sure that it has time to get the newest messages
-					reload();
-					sleep(1);
-					reload();
-					sleep(1);
 					reload();
 				}else{
 					return;
