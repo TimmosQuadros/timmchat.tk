@@ -56,10 +56,6 @@ if (!isset($_SESSION['name'])) {
 	<script type="text/javascript">
 		// jQuery Document
 		$(document).ready(function() {
-			<?php
-				static $modifiedTS = 0;
-				$lastModifiedTS = 0;
-			?>
 			//If user wants to end session
 			$("#exit").click(function() {
 				var exit = confirm("Are you sure you want to end the session?");
@@ -75,16 +71,10 @@ if (!isset($_SESSION['name'])) {
 					async: false
 				});
 				$("#usermsg").attr("value", "");
-				$modifiedTS = filemtime("log.html");
 				return false;
 			});
 			function loadLog() {
-				if($modifiedTS != $lastModifiedTS){
-					$lastModifiedTS = $modifiedTS;
-					reload();
-				}else{
-					return;
-				}
+				reload();
 			}
 			function reload(){
 				var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Scroll height before the request
