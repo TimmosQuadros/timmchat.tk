@@ -63,6 +63,8 @@ if (!isset($_SESSION['name'])) {
 					text: clientmsg
 				});
 				$("#usermsg").attr("value", "");
+				var audio = new Audio('message.mp3');
+				audio.play();
 				return false;
 			});
 			function loadLog() {
