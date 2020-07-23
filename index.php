@@ -78,7 +78,7 @@ if (!isset($_SESSION['name'])) {
 							//if (newscrollHeight > oldscrollHeight) {
 								$("#chatbox").animate({
 									scrollTop: $("#chatbox").attr("scrollHeight")
-								}, 1000); //Autoscroll to bottom of div
+								}, 'normal'); //Autoscroll to bottom of div
 							//}
 						},
 					});
