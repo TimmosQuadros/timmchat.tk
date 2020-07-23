@@ -47,7 +47,7 @@ if ($uploadOk == 0) {
         $text = $_POST['text'];
          
         $fp = fopen("log.html", 'a');
-        fwrite($fp, "<div class='msgln'>(".date("g:i A").") <b>".$_SESSION['name']."</b>: "+"<br><img src=\""+$target_file+"\" alt=\"image\" width=\"200\"><\img>"+"<br></div>");
+        fwrite($fp, "<div class='msgln'>(".date("g:i A").") <b>".$_SESSION['name']."</b>: "+"<br><img src=\""+"\" alt=\"image\" width=\"200\"><\img>"+"<br></div>");
         fclose($fp);
     }
   } else {
