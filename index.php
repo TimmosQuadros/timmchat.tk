@@ -75,11 +75,11 @@ if (!isset($_SESSION['name'])) {
 						success: function(html) {
 							$("#chatbox").html(html); //Insert chat log into the #chatbox div	
 							//Auto-scroll
-							if (newscrollHeight > oldscrollHeight) {
+							//if (newscrollHeight > oldscrollHeight) {
 								$("#chatbox").animate({
 									scrollTop: $("#chatbox").attr("scrollHeight")
 								}, 1000); //Autoscroll to bottom of div
-							}
+							//}
 						},
 					});
 			}
