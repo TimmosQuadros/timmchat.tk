@@ -57,8 +57,8 @@ if (!isset($_SESSION['name'])) {
 				}
 			});
 			$("#submitmsg").click(function() {
-				console.log('Test');
 				var clientmsg = $("#usermsg").val();
+				$("#usermsg").val('');
 				$.post("post.php", {
 					text: clientmsg
 				});
