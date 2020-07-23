@@ -76,7 +76,7 @@ if (!isset($_SESSION['name'])) {
 						success: function(html) {
 							$("#chatbox").html(html); //Insert chat log into the #chatbox div	
 							//Auto-scroll			
-							var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
+							var newscrollHeight = $("#chatbox").attr("scrollHeight") + 20; //Scroll height after the request
 							if (newscrollHeight > oldscrollHeight) {
 								$("#chatbox").animate({
 									scrollTop: newscrollHeight
