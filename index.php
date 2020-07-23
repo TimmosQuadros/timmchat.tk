@@ -69,17 +69,15 @@ if (!isset($_SESSION['name'])) {
 				return false;
 			});
 			function loadLog() {
-				var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
 					$.ajax({
 						url: "log.html",
 						cache: false,
 						success: function(html) {
 							$("#chatbox").html(html); //Insert chat log into the #chatbox div	
-							//Auto-scroll			
-							var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
+							//Auto-scroll
 							if (newscrollHeight > oldscrollHeight) {
 								$("#chatbox").animate({
-									scrollTop: newscrollHeight
+									scrollTop: $("#chatbox").attr("scrollHeight")
 								}, 1000); //Autoscroll to bottom of div
 							}
 						},
