@@ -69,13 +69,10 @@ if (!isset($_SESSION['name'])) {
 				var clientmsg = $("#usermsg").val();
 				$("#usermsg").val('');
 				$.post("post.php", {
-					text: clientmsg
+					text: clientmsg,
+					async: false
 				});
 				$("#usermsg").attr("value", "");
-				//Wait for it to finish
-				while($modifiedTS == $lastModifiedTS){
-					sleep(1);
-				}
 				$modifiedTS = filemtime("log.html");
 				return false;
 			});
