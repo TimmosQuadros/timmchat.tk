@@ -58,7 +58,7 @@ if (!isset($_SESSION['name'])) {
 		$(document).ready(function() {
 			<?php
 				static $modifiedTS = 0;
-				static $lastModifiedTS = 0;
+				$lastModifiedTS = 0;
 			?>
 			//If user wants to end session
 			$("#exit").click(function() {
