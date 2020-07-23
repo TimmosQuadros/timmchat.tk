@@ -67,8 +67,7 @@ if (!isset($_SESSION['name'])) {
 				var clientmsg = $("#usermsg").val();
 				$("#usermsg").val('');
 				$.post("post.php", {
-					text: clientmsg,
-					async: false
+					text: clientmsg
 				});
 				$("#usermsg").attr("value", "");
 				return false;
