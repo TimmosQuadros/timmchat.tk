@@ -69,7 +69,7 @@ if (!isset($_SESSION['name'])) {
 				return false;
 			});
 			function loadLog() {
-				if(lastModifiedTS == modifiedTS+1000){
+				if(lastModifiedTS == modifiedTS+5){
 					return;
 				}else{
 					lastModifiedTS = modifiedTS;
