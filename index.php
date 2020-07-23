@@ -69,10 +69,9 @@ if (!isset($_SESSION['name'])) {
 				return false;
 			});
 			function loadLog() {
-				if(lastModifiedTS == modifiedTS+5){
+				if(lastModifiedTS == modifiedTS){
 					return;
 				}else{
-					lastModifiedTS = modifiedTS;
 					var audio = new Audio('message.mp3');
 					audio.play();
 					var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
@@ -90,6 +89,7 @@ if (!isset($_SESSION['name'])) {
 							}
 						},
 					});
+					lastModifiedTS = modifiedTS;
 				}
 			}
 			setInterval(loadLog, 2500);
