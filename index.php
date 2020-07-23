@@ -41,7 +41,7 @@ if (!isset($_SESSION['name'])) {
 		</div>
 
 		<form name="message" action="">
-			<input name="usermsg" type="text" id="usermsg" size="63" />
+			<input name="usermsg" type="text" id="usermsg" size="63" autofocus/>
 			<input name="submitmsg" type="submit" id="submitmsg" value="Send" />
 		</form>
 	</div>
