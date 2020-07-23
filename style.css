@@ -17,7 +17,7 @@ a {
   
     a:hover { text-decoration:underline; }
 
-img {border: 5px solid #555;}
+img {border: 1px solid #555;}
   
 #wrapper, #loginform {
     margin:0 auto;

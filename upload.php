@@ -45,7 +45,7 @@ if ($uploadOk == 0) {
     //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     if(isset($_SESSION['name'])){
         $fp = fopen("log.html", 'a');
-        fwrite($fp, "<div class='msgln'>(".date("g:i A").") <b>".$_SESSION['name']."</b>: "."<br><img src=\"".$target_file."\" alt=\"image\" width=\"200\"><\img>"."<br></div>");
+        fwrite($fp, "<div class='msgln'>(".date("g:i A").") <b>".$_SESSION['name']."</b>: "."<br><img src=\"".$target_file."\" alt=\"image\" width=\"200\"\\>"."<br></div>");
         fclose($fp);
         echo($tmp);
     }
