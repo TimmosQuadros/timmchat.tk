@@ -44,6 +44,13 @@ if (!isset($_SESSION['name'])) {
 			<input name="usermsg" type="text" id="usermsg" size="63" autofocus/>
 			<input name="submitmsg" type="submit" id="submitmsg" value="Send" />
 		</form>
+
+		<form action="upload.php" method="post" enctype="multipart/form-data">
+  			Select image to upload:
+  			<input type="file" name="fileToUpload" id="fileToUpload">
+  			<input type="submit" value="Upload Image" name="submit">
+		</form>
+
 	</div>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript">
